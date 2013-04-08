@@ -19,16 +19,16 @@ function gsb_feature_research_paper_ct_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '3',
+          'weight' => '12',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '2',
+          'weight' => '11',
         ),
         'workbench_access' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
       ),
       'display' => array(),

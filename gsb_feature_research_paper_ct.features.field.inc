@@ -269,11 +269,14 @@ function gsb_feature_research_paper_ct_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'options',
+        'module' => 'entityreference',
         'settings' => array(
+          'match_operator' => 'CONTAINS',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'path' => '',
+          'size' => 60,
         ),
-        'type' => 'options_buttons',
+        'type' => 'entityreference_autocomplete',
         'weight' => '1',
       ),
       'workbench_access_field' => 0,
@@ -448,7 +451,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'maxlength_js_label' => '',
         ),
         'type' => 'taxonomy_hs',
-        'weight' => '11',
+        'weight' => '9',
       ),
       'workbench_access_field' => 0,
     ),
@@ -545,7 +548,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '7',
+        'weight' => '4',
       ),
       'workbench_access_field' => 0,
     ),
@@ -640,104 +643,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'maxlength_js_label' => '',
         ),
         'type' => 'taxonomy_hs',
-        'weight' => '12',
-      ),
-      'workbench_access_field' => 0,
-    ),
-  );
-
-  // Exported field: 'node-research_paper-field_citation'.
-  $fields['node-research_paper-field_citation'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_citation',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'text_long',
-    ),
-    'field_instance' => array(
-      'bundle' => 'research_paper',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'text_default',
-          'weight' => 6,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'ical' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'tiny' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_citation',
-      'label' => 'Citation',
-      'required' => 0,
-      'settings' => array(
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'maxlength_js' => '',
-          'maxlength_js_enforce' => 0,
-          'maxlength_js_label' => '',
-          'maxlength_js_truncate_html' => 0,
-          'rows' => '5',
-        ),
-        'type' => 'text_textarea',
-        'weight' => '9',
+        'weight' => '10',
       ),
       'workbench_access_field' => 0,
     ),
@@ -834,7 +740,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '17',
+        'weight' => '15',
       ),
       'workbench_access_field' => 0,
     ),
@@ -863,7 +769,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'second' => 0,
           'year' => 'year',
         ),
-        'repeat' => 0,
+        'repeat' => '0',
         'timezone_db' => '',
         'todate' => '',
         'tz_handling' => 'none',
@@ -943,7 +849,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '4',
+        'weight' => '2',
       ),
       'workbench_access_field' => 0,
     ),
@@ -1038,7 +944,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'maxlength_js_label' => '',
         ),
         'type' => 'taxonomy_hs',
-        'weight' => '13',
+        'weight' => '11',
       ),
       'workbench_access_field' => 0,
     ),
@@ -1117,12 +1023,12 @@ function gsb_feature_research_paper_ct_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_file_single_public',
-      'label' => 'Document',
+      'label' => 'Upload Research Paper',
       'required' => 0,
       'settings' => array(
         'description_field' => 0,
         'file_directory' => '',
-        'file_extensions' => 'pdf doc xls ppt',
+        'file_extensions' => 'txt pdf doc docx xls xlsx ppt pptx',
         'max_filesize' => '',
         'user_register_form' => FALSE,
       ),
@@ -1131,23 +1037,23 @@ function gsb_feature_research_paper_ct_field_default_fields() {
         'module' => 'media',
         'settings' => array(
           'allowed_schemes' => array(
-            'private' => 'private',
+            'private' => 0,
             'public' => 'public',
             'vimeo' => 0,
             'youtube' => 0,
           ),
           'allowed_types' => array(
             'audio' => 0,
-            'document' => 0,
-            'image' => 'image',
+            'document' => 'document',
+            'image' => 0,
             'video' => 0,
           ),
           'browser_plugins' => array(
-            'gsb_media_browser--files_and_docs' => 0,
+            'gsb_media_browser--files_and_docs' => 'gsb_media_browser--files_and_docs',
             'gsb_media_browser--images' => 0,
             'gsb_media_browser--videos' => 0,
             'gsb_media_center_document' => 0,
-            'gsb_media_center_image' => 'gsb_media_center_image',
+            'gsb_media_center_image' => 0,
             'gsb_media_center_video' => 0,
             'media_default--media_browser_1' => 0,
             'media_default--media_browser_my_files' => 0,
@@ -1158,7 +1064,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '8',
+        'weight' => '5',
       ),
       'workbench_access_field' => 0,
     ),
@@ -1253,118 +1159,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'maxlength_js_label' => '',
         ),
         'type' => 'taxonomy_hs',
-        'weight' => '14',
-      ),
-      'workbench_access_field' => 0,
-    ),
-  );
-
-  // Exported field: 'node-research_paper-field_link_unlimited'.
-  $fields['node-research_paper-field_link_unlimited'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_link_unlimited',
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => '0',
-      'module' => 'link',
-      'settings' => array(
-        'attributes' => array(
-          'class' => '',
-          'rel' => '',
-          'target' => 'default',
-        ),
-        'display' => array(
-          'url_cutoff' => 80,
-        ),
-        'enable_tokens' => 1,
-        'title' => 'optional',
-        'title_maxlength' => 128,
-        'title_value' => '',
-        'url' => 0,
-      ),
-      'translatable' => '0',
-      'type' => 'link_field',
-    ),
-    'field_instance' => array(
-      'bundle' => 'research_paper',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'link',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'link_default',
-          'weight' => 15,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'ical' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'tiny' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_link_unlimited',
-      'label' => 'Related Links',
-      'required' => 0,
-      'settings' => array(
-        'attributes' => array(
-          'class' => '',
-          'configurable_title' => 0,
-          'rel' => '',
-          'target' => '_blank',
-          'title' => '',
-        ),
-        'display' => array(
-          'url_cutoff' => '80',
-        ),
-        'enable_tokens' => 0,
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'title' => 'none',
-        'title_maxlength' => '128',
-        'title_value' => '',
-        'url' => 0,
-        'user_register_form' => FALSE,
-        'validate_url' => 1,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'link',
-        'settings' => array(
-          'maxlength_js_label' => '',
-        ),
-        'type' => 'link_field',
-        'weight' => '10',
+        'weight' => '12',
       ),
       'workbench_access_field' => 0,
     ),
@@ -1449,7 +1244,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'maxlength_js_label' => '',
         ),
         'type' => 'field_collection_embed',
-        'weight' => '5',
+        'weight' => '3',
       ),
       'workbench_access_field' => 0,
     ),
@@ -1544,7 +1339,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'maxlength_js_label' => '',
         ),
         'type' => 'taxonomy_hs',
-        'weight' => '15',
+        'weight' => '13',
       ),
       'workbench_access_field' => 0,
     ),
@@ -1622,7 +1417,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_research_paper_number',
-      'label' => 'Paper No.',
+      'label' => 'Paper Number',
       'required' => 1,
       'settings' => array(
         'linkit' => array(
@@ -1641,7 +1436,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '6',
+        'weight' => '1',
       ),
       'workbench_access_field' => 0,
     ),
@@ -1738,7 +1533,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '18',
+        'weight' => '16',
       ),
       'workbench_access_field' => 0,
     ),
@@ -1833,7 +1628,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'maxlength_js_label' => '',
         ),
         'type' => 'taxonomy_hs',
-        'weight' => '16',
+        'weight' => '14',
       ),
       'workbench_access_field' => 0,
     ),
@@ -1845,21 +1640,19 @@ function gsb_feature_research_paper_ct_field_default_fields() {
   t('Academic Area');
   t('Authors');
   t('Business Insight Topic');
-  t('Citation');
   t('Company/Organization');
   t('Date Published');
   t('Discipline');
-  t('Document');
   t('First Name');
   t('Industry');
   t('Last Name');
-  t('Paper No.');
+  t('Paper Number');
   t('Person Ref');
   t('Person Selection');
   t('Region');
-  t('Related Links');
   t('Tag');
   t('Target Audience');
+  t('Upload Research Paper');
 
   return $fields;
 }
