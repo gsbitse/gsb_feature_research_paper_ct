@@ -130,6 +130,35 @@ function gsb_feature_research_paper_ct_ds_field_settings_info() {
   );
   $export['node|research_paper|full'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|research_paper|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'research_paper';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'field_date_published' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'DATE POSTED',
+        ),
+      ),
+    ),
+    'field_research_paper_number' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+        ),
+      ),
+    ),
+  );
+  $export['node|research_paper|teaser'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -246,6 +275,58 @@ function gsb_feature_research_paper_ct_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
   );
   $export['node|research_paper|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|research_paper|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'research_paper';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_date_published',
+        1 => 'title',
+        2 => 'field_research_paper_number',
+        3 => 'field_person_fac_student_other',
+        4 => 'field_body',
+        5 => 'group_tags_wrapper',
+        6 => 'field_target_audience',
+        7 => 'field_tag',
+        8 => 'field_region',
+        9 => 'field_company_organization',
+        10 => 'field_discipline',
+        11 => 'field_academic_area_unlimited',
+        12 => 'field_business_insight_topic',
+        13 => 'field_industry',
+      ),
+    ),
+    'fields' => array(
+      'field_date_published' => 'ds_content',
+      'title' => 'ds_content',
+      'field_research_paper_number' => 'ds_content',
+      'field_person_fac_student_other' => 'ds_content',
+      'field_body' => 'ds_content',
+      'group_tags_wrapper' => 'ds_content',
+      'field_target_audience' => 'ds_content',
+      'field_tag' => 'ds_content',
+      'field_region' => 'ds_content',
+      'field_company_organization' => 'ds_content',
+      'field_discipline' => 'ds_content',
+      'field_academic_area_unlimited' => 'ds_content',
+      'field_business_insight_topic' => 'ds_content',
+      'field_industry' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+  );
+  $export['node|research_paper|teaser'] = $ds_layout;
 
   return $export;
 }
