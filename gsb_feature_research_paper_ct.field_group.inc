@@ -70,7 +70,7 @@ function gsb_feature_research_paper_ct_field_group_info() {
     'format_settings' => array(
       'label' => 'Tags',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => 'research-paper',
       ),
       'formatter' => 'open',
     ),

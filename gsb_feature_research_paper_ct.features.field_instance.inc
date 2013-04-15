@@ -522,13 +522,13 @@ function gsb_feature_research_paper_ct_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 21,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1035,7 +1035,7 @@ function gsb_feature_research_paper_ct_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
         'module' => 'gsb_field_formatter',
         'settings' => array(
           'conditions' => array(),
