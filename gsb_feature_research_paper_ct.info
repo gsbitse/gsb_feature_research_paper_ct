@@ -15,6 +15,7 @@ dependencies[] = field_group
 dependencies[] = file
 dependencies[] = gsb_feature_business_insight_ct
 dependencies[] = gsb_feature_event_ct
+dependencies[] = gsb_feature_research_paper_display
 dependencies[] = gsb_feature_staff_ct
 dependencies[] = gsb_field_formatter
 dependencies[] = hs_taxonomy
