@@ -425,7 +425,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
             'taxonomy_term_separator' => ', ',
           ),
           'type' => 'ds_taxonomy_separator',
-          'weight' => '15',
+          'weight' => '3',
         ),
         'default' => array(
           'label' => 'hidden',
@@ -536,9 +536,10 @@ function gsb_feature_research_paper_ct_field_default_fields() {
           'module' => 'text',
           'settings' => array(
             'conditions' => array(),
+            'trim_length' => '150',
           ),
-          'type' => 'text_default',
-          'weight' => '5',
+          'type' => 'text_trimmed',
+          'weight' => '2',
         ),
         'default' => array(
           'label' => 'hidden',
@@ -665,7 +666,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
             'taxonomy_term_separator' => ', ',
           ),
           'type' => 'ds_taxonomy_separator',
-          'weight' => '13',
+          'weight' => '1',
         ),
         'default' => array(
           'label' => 'hidden',
@@ -787,7 +788,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
             'taxonomy_term_separator' => ', ',
           ),
           'type' => 'ds_taxonomy_separator',
-          'weight' => '19',
+          'weight' => '7',
         ),
         'default' => array(
           'label' => 'hidden',
@@ -900,18 +901,9 @@ function gsb_feature_research_paper_ct_field_default_fields() {
       'display' => array(
         'business_insight' => array(
           'label' => 'inline',
-          'module' => 'date',
-          'settings' => array(
-            'conditions' => array(),
-            'format_type' => 'panopoly_day',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-            'show_repeat_rule' => 'show',
-          ),
-          'type' => 'date_default',
-          'weight' => '2',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '9',
         ),
         'default' => array(
           'label' => 'inline',
@@ -1059,7 +1051,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
             'taxonomy_term_separator' => ', ',
           ),
           'type' => 'ds_taxonomy_separator',
-          'weight' => '14',
+          'weight' => '2',
         ),
         'default' => array(
           'label' => 'hidden',
@@ -1170,12 +1162,9 @@ function gsb_feature_research_paper_ct_field_default_fields() {
       'display' => array(
         'business_insight' => array(
           'label' => 'hidden',
-          'module' => 'file',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'file_default',
-          'weight' => '6',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '11',
         ),
         'default' => array(
           'label' => 'hidden',
@@ -1295,7 +1284,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
             'taxonomy_term_separator' => ', ',
           ),
           'type' => 'ds_taxonomy_separator',
-          'weight' => '16',
+          'weight' => '4',
         ),
         'default' => array(
           'label' => 'hidden',
@@ -1395,14 +1384,9 @@ function gsb_feature_research_paper_ct_field_default_fields() {
       'display' => array(
         'business_insight' => array(
           'label' => 'hidden',
-          'module' => 'gsb_field_formatter',
-          'settings' => array(
-            'conditions' => array(),
-            'separator' => ', ',
-            'view_mode' => 'full',
-          ),
-          'type' => 'gsb_field_formatter_field_collection_separator',
-          'weight' => '1',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '8',
         ),
         'default' => array(
           'label' => 'hidden',
@@ -1526,7 +1510,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
             'taxonomy_term_separator' => ', ',
           ),
           'type' => 'ds_taxonomy_separator',
-          'weight' => '17',
+          'weight' => '5',
         ),
         'default' => array(
           'label' => 'hidden',
@@ -1636,12 +1620,9 @@ function gsb_feature_research_paper_ct_field_default_fields() {
       'display' => array(
         'business_insight' => array(
           'label' => 'inline',
-          'module' => 'text',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'text_default',
-          'weight' => '3',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '10',
         ),
         'default' => array(
           'label' => 'inline',
@@ -1766,7 +1747,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
             'taxonomy_term_separator' => ', ',
           ),
           'type' => 'ds_taxonomy_separator',
-          'weight' => '20',
+          'weight' => '8',
         ),
         'default' => array(
           'label' => 'hidden',
@@ -1890,7 +1871,7 @@ function gsb_feature_research_paper_ct_field_default_fields() {
             'taxonomy_term_separator' => ', ',
           ),
           'type' => 'ds_taxonomy_separator',
-          'weight' => '18',
+          'weight' => '6',
         ),
         'default' => array(
           'label' => 'hidden',

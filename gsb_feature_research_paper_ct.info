@@ -51,6 +51,7 @@ features[field][] = node-research_paper-field_region
 features[field][] = node-research_paper-field_research_paper_number
 features[field][] = node-research_paper-field_tag
 features[field][] = node-research_paper-field_target_audience
+features[field_group][] = group_tags_wrapper|node|research_paper|business_insight
 features[field_group][] = group_tags_wrapper|node|research_paper|default
 features[field_group][] = group_tags_wrapper|node|research_paper|full
 features[field_group][] = group_tags_wrapper|node|research_paper|teaser
