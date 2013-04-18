@@ -385,8 +385,9 @@ function gsb_feature_research_paper_ct_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
+          'trim_length' => 150,
         ),
-        'type' => 'text_default',
+        'type' => 'text_trimmed',
         'weight' => 4,
       ),
       'tiny' => array(
@@ -1069,11 +1070,11 @@ function gsb_feature_research_paper_ct_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'gsb_field_formatter',
         'settings' => array(
           'conditions' => array(),
-          'separator' => ', ',
+          'separator' => '; ',
           'view_mode' => 'full',
         ),
         'type' => 'gsb_field_formatter_field_collection_separator',

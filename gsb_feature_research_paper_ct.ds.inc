@@ -147,18 +147,33 @@ function gsb_feature_research_paper_ct_ds_field_settings_info() {
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h3',
+        'class' => '',
+        'ft' => array(),
+        'conditions' => array(),
+      ),
     ),
     'field_date_published' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'lb' => 'DATE POSTED',
+          'func' => 'theme_ds_field_minimal',
+          'lb' => 'Date posted',
+          'lb-col' => TRUE,
         ),
       ),
     ),
     'field_research_paper_number' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_minimal',
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'paper-code',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
       ),
     ),
