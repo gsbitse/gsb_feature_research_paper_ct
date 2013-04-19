@@ -142,6 +142,8 @@ function gsb_feature_research_paper_ct_field_group_info() {
       'label' => 'Tags:',
       'instance_settings' => array(
         'classes' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
       ),
       'formatter' => 'open',
     ),
