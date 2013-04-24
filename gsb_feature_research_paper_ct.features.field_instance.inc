@@ -337,6 +337,63 @@ function gsb_feature_research_paper_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-research_paper-field_addthis'
+  $field_instances['node-research_paper-field_addthis'] = array(
+    'bundle' => 'research_paper',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'business_insight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'addthis_displays',
+        'settings' => array(
+          'buttons_size' => 'addthis_16x16_style',
+          'conditions' => array(
+            0 => array(
+              'condition' => '',
+            ),
+          ),
+          'counter_orientation' => 'horizontal',
+          'extra_css' => '',
+          'share_services' => 'twitter, linkedin, facebook, google_plusone_share, email',
+        ),
+        'type' => 'addthis_basic_toolbox',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_addthis',
+    'label' => 'AddThis',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'addthis',
+      'settings' => array(
+        'maxlength_js_label' => '',
+      ),
+      'type' => 'addthis_button_widget',
+      'weight' => 17,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-research_paper-field_body'
   $field_instances['node-research_paper-field_body'] = array(
     'bundle' => 'research_paper',
@@ -1452,6 +1509,7 @@ function gsb_feature_research_paper_ct_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Abstract Text');
   t('Academic Area');
+  t('AddThis');
   t('Authors');
   t('Business Insight Topic');
   t('Citation');
