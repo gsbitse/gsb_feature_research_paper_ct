@@ -165,7 +165,6 @@ function gsb_feature_research_paper_ct_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_minimal',
           'lb' => 'Date posted',
-          'lb-col' => TRUE,
         ),
       ),
     ),
