@@ -5,3 +5,47 @@
  */
 
 include_once 'gsb_feature_research_paper_ct.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter() for event node edit form.
+ */
+function gsb_feature_research_paper_ct_form_research_paper_node_form_alter(&$form, &$form_state) {
+
+  $language = $form['language']['#value'];
+
+  if (!empty($form['field_person_fac_student_other'][$language])) {
+
+    foreach ($form['field_person_fac_student_other'][$language] as $index => $data) {
+
+      if (is_integer($index)) {
+
+        $form['field_person_fac_student_other'][$language][$index]['field_person_fac_student_ref']['#states'] = array(
+          'visible' => array(
+            ':input[name="field_person_fac_student_other[' . $language . '][' . $index . '][field_person_or_other][' . $language . ']"]' => array(
+              array('value' => 'UseEntityReference'),
+            ),
+          ),
+        );
+
+        $form['field_person_fac_student_other'][$language][$index]['field_first_name']['#states'] = array(
+          'visible' => array(
+            ':input[name="field_person_fac_student_other[' . $language . '][' . $index . '][field_person_or_other][' . $language . ']"]' => array(
+              array('value' => 'Other'),
+            ),
+          ),
+        );
+
+        $form['field_person_fac_student_other'][$language][$index]['field_last_name']['#states'] = array(
+          'visible' => array(
+            ':input[name="field_person_fac_student_other[' . $language . '][' . $index . '][field_person_or_other][' . $language . ']"]' => array(
+              array('value' => 'Other'),
+            ),
+          ),
+        );
+
+      }
+    }
+  }
+  
+}
+
