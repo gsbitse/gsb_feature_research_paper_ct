@@ -14,6 +14,8 @@ function gsb_feature_research_paper_ct_form_research_paper_node_form_alter(&$for
   $language = $form['language']['#value'];
 
   if (!empty($form['field_person_fac_student_other'][$language])) {
+    
+    $form['#validate'][] = "gsb_feature_research_paper_ct_validate";
 
     foreach ($form['field_person_fac_student_other'][$language] as $index => $data) {
 
@@ -47,5 +49,36 @@ function gsb_feature_research_paper_ct_form_research_paper_node_form_alter(&$for
     }
   }
   
+}
+
+function gsb_feature_research_paper_ct_validate($form, &$form_state) {
+
+  // Look thru the form and be sure the authors field has a (ref) or (a first and last name pair)
+
+  if (isset($form['#id']) && $form['#id'] == 'research-paper-node-form') {
+    $language = $form['language']['#value'];
+    foreach ($form_state['values']['field_person_fac_student_other'][$language] as $index => $data) {
+      if (is_integer($index)) {
+        $value = $form_state['values']['field_person_fac_student_other'][$language][$index]['field_person_or_other'][$language][0]['value'];
+        if ($value == 'Other') {
+          $first_name = $form_state['values']['field_person_fac_student_other'][$language][$index]['field_first_name'][$language][0]['value'];
+          $last_name = $form_state['values']['field_person_fac_student_other'][$language][$index]['field_last_name'][$language][0]['value'];
+          if (empty($first_name)) {
+            form_set_error('field_person_fac_student_other][' . $language . '][' . $index . '][field_first_name', t('Please enter a first name.'));
+          }
+          if (empty($last_name)) {
+            form_set_error('field_person_fac_student_other][' . $language . '][' . $index . '][field_last_name', t('Please enter a last name.'));
+          }
+        }
+        if ($value == 'UseEntityReference') {
+          $student_ref = $form_state['values']['field_person_fac_student_other'][$language][$index]['field_person_fac_student_ref'][$language][0]['target_id'];
+          if (empty($student_ref)) {
+            form_set_error('field_person_fac_student_other][' . $language . '][' . $index . '][field_person_fac_student_ref', t('Please enter a person reference.'));
+          }
+        }
+      }
+    }
+  }
+
 }
 
