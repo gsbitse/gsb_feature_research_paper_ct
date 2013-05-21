@@ -1335,6 +1335,71 @@ function gsb_feature_research_paper_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-research_paper-field_search_field'
+  $field_instances['node-research_paper-field_search_field'] = array(
+    'bundle' => 'research_paper',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'business_insight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'concat_field',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'concat_field_blank',
+        'weight' => 21,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_search_field',
+    'label' => 'Search field',
+    'required' => 0,
+    'settings' => array(
+      'selected_fields' => array(
+        'field_academic_area_unlimited' => 'field_academic_area_unlimited',
+        'field_addthis' => 0,
+        'field_body' => 'field_body',
+        'field_business_insight_topic' => 'field_business_insight_topic',
+        'field_citation' => 'field_citation',
+        'field_company_organization' => 'field_company_organization',
+        'field_date_published' => 'field_date_published',
+        'field_discipline' => 'field_discipline',
+        'field_file_single_public' => 0,
+        'field_industry' => 'field_industry',
+        'field_person_fac_student_other' => 'field_person_fac_student_other',
+        'field_region' => 'field_region',
+        'field_research_paper_number' => 'field_research_paper_number',
+        'field_tag' => 'field_tag',
+        'field_target_audience' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'concat_field',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'concat_field_default',
+      'weight' => 20,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-research_paper-field_tag'
   $field_instances['node-research_paper-field_tag'] = array(
     'bundle' => 'research_paper',
@@ -1521,6 +1586,7 @@ function gsb_feature_research_paper_ct_field_default_field_instances() {
   t('Person Ref');
   t('Person Selection');
   t('Region');
+  t('Search field');
   t('Tag');
   t('Target Audience');
   t('Upload Research Paper');
